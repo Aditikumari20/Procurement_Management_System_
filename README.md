@@ -429,8 +429,6 @@ The system can be extended with additional business rules, validation mechanisms
 
 **Project Name:** Procurement Management System
 
-**Project Type:** Python Full-Stack / Database Management Project
-
 **Primary Language:** Python
 
 **Database:** SQLite
