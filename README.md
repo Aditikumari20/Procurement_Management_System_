@@ -181,20 +181,13 @@ Procurement_Management_System/
 │   └── style.css
 │
 └── exports/
-    ├── departments.csv
-    ├── requesters.csv
-    ├── budgets.csv
-    ├── suppliers.csv
-    ├── purchase_requests.csv
-    ├── request_lines.csv
-    ├── rfqs.csv
-    ├── supplier_quotes.csv
     ├── approvals.csv
+    ├── departments.csv
     ├── purchase_orders.csv
-    ├── purchase_order_lines.csv
-    ├── deliveries.csv
-    ├── audit_events.csv
-    └── source_manifest.json
+    ├── purchase_requests.csv
+    ├── source_manifest.json
+    ├── suppliers.csv
+    
 ```
 
 Note: Generated database, reports, and export files appear after running the corresponding project scripts. Additional documentation files should be created as the project is completed.
