@@ -1,0 +1,26 @@
+{
+    "project": "Procurement Management System",
+    "generated_at": "2026-11-13T21:29:44.466159",
+    "files": {
+        "departments.csv": {
+            "table": "departments",
+            "records": 5
+        },
+        "suppliers.csv": {
+            "table": "suppliers",
+            "records": 32
+        },
+        "purchase_requests.csv": {
+            "table": "purchase_requests",
+            "records": 61
+        },
+        "approvals.csv": {
+            "table": "approvals",
+            "records": 60
+        },
+        "purchase_orders.csv": {
+            "table": "purchase_orders",
+            "records": 18
+        }
+    }
+}
