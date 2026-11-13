@@ -1,0 +1,93 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Create New Purchase Request</h2>
+
+<div class="card shadow-sm p-4 mt-3">
+
+<form method="POST">
+
+    <div class="mb-3">
+
+        <label class="form-label">Requester</label>
+
+        <select name="requester_id"
+                class="form-select"
+                required>
+
+            {% for p in people %}
+
+            <option value="{{ p.requester_id }}">
+
+                {{ p.requester_name }}
+                - {{ p.department_id }}
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Item Name</label>
+
+        <input type="text"
+               name="item_name"
+               class="form-control"
+               required>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Category</label>
+
+        <input type="text"
+               name="category"
+               class="form-control"
+               required>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Quantity</label>
+
+        <input type="number"
+               name="quantity"
+               min="1"
+               class="form-control"
+               required>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">Unit Price (INR)</label>
+
+        <input type="number"
+               name="unit_price"
+               min="0"
+               step="0.01"
+               class="form-control"
+               required>
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary">
+
+        Submit Purchase Request
+
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}

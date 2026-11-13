@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Exception Management</h2>
+
+<p class="text-muted">
+    Review unusual procurement transactions.
+</p>
+
+<div class="table-responsive card shadow-sm mt-3">
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+    <th>Exception ID</th>
+    <th>Entity</th>
+    <th>Entity ID</th>
+    <th>Issue Type</th>
+    <th>Reason</th>
+    <th>Detected Date</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for e in rows %}
+
+<tr>
+
+    <td>{{ e.exception_id }}</td>
+    <td>{{ e.entity_type }}</td>
+    <td>{{ e.entity_id }}</td>
+    <td>{{ e.issue_type }}</td>
+    <td>{{ e.reason }}</td>
+    <td>{{ e.detected_at }}</td>
+
+</tr>
+
+{% else %}
+
+<tr>
+    <td colspan="6">No exception records available.</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

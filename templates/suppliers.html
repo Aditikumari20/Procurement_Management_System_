@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Supplier Management</h2>
+
+<div class="table-responsive card shadow-sm mt-3">
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+    <th>Supplier ID</th>
+    <th>Supplier Code</th>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Risk Flag</th>
+    <th>Currency</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for s in rows %}
+
+<tr>
+
+    <td>{{ s.supplier_id }}</td>
+    <td>{{ s.supplier_code }}</td>
+    <td>{{ s.supplier_name }}</td>
+
+    <td>
+        {{ "Active" if s.active else "Inactive" }}
+    </td>
+
+    <td>
+        {{ "Risk" if s.risk_flag else "Normal" }}
+    </td>
+
+    <td>{{ s.currency }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

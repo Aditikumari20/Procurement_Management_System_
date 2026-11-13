@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Purchase Order Management</h2>
+
+<div class="table-responsive card shadow-sm mt-3">
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+    <th>PO ID</th>
+    <th>Request ID</th>
+    <th>Supplier</th>
+    <th>Order Date</th>
+    <th>Total Amount</th>
+    <th>Approval</th>
+    <th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for p in rows %}
+
+<tr>
+
+    <td>{{ p.po_id }}</td>
+    <td>{{ p.request_id }}</td>
+    <td>{{ p.supplier_name }}</td>
+    <td>{{ p.order_date }}</td>
+
+    <td>
+        ₹{{ "{:,.2f}".format(p.total_amount) }}
+    </td>
+
+    <td>
+        {{ "Approved" if p.approved_flag else "Missing Approval" }}
+    </td>
+
+    <td>{{ p.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Supplier Quote Comparison</h2>
+
+<p class="text-muted">
+    Compare supplier quotations using landed cost and delivery time.
+</p>
+
+<div class="table-responsive card shadow-sm mt-3">
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+    <th>Quote ID</th>
+    <th>Supplier</th>
+    <th>Currency</th>
+    <th>Delivery Days</th>
+    <th>Landed Cost</th>
+    <th>Status</th>
+    <th>Selection Reason</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for q in rows %}
+
+<tr>
+
+    <td>{{ q.quote_id }}</td>
+    <td>{{ q.supplier_name }}</td>
+    <td>{{ q.currency }}</td>
+    <td>{{ q.delivery_days }}</td>
+
+    <td>
+        {{ q.currency }}
+        {{ "{:,.2f}".format(q.total_landed_cost) }}
+    </td>
+
+    <td>{{ q.status }}</td>
+
+    <td>{{ q.rationale or "Not selected" }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

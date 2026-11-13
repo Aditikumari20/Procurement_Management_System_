@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Purchase Requests</h2>
+
+<div class="table-responsive card shadow-sm mt-3">
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+    <th>Request ID</th>
+    <th>Department</th>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for r in rows %}
+
+<tr>
+
+    <td>{{ r.request_id }}</td>
+
+    <td>{{ r.department_name }}</td>
+
+    <td>{{ r.request_date }}</td>
+
+    <td>₹{{ "{:,.2f}".format(r.estimated_total) }}</td>
+
+    <td>{{ r.status }}</td>
+
+    <td>
+
+        {% if r.status == "SUBMITTED" %}
+
+        <form method="POST"
+              action="/approve/{{ r.request_id }}">
+
+            <button class="btn btn-success btn-sm">
+                Approve
+            </button>
+
+        </form>
+
+        {% else %}
+
+        Approved / Processing
+
+        {% endif %}
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}
