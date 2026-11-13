@@ -160,10 +160,9 @@ Procurement_Management_System/
 ├── validate.py
 ├── requirements.txt
 ├── README.md
-│
 ├── procurement.db
 ├── ground_truth.csv
-├── validation_summary.json
+├── validation_summary.jso
 │
 ├── docs/
 │   ├── DATA_DICTIONARY.md
